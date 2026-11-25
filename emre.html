@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fanus · Emre">
+<meta name="theme-color" content="#f7f2ec">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>Fanus · Emre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,0..100;1,9..144,400..900,0..100&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f7f2ec;--bg2:#e9f3f4;--card:#fffdfa;--ink:#33303a;--muted:#8c8590;--line:rgba(60,40,30,.08);--accent:#3f8fb0;--soft:#efe8e0;--rose:#d77b8f;--paper:#fffaf1;
+    --shadow:0 1px 2px rgba(80,50,30,.05),0 8px 24px -8px rgba(80,50,30,.14);--spring:cubic-bezier(.34,1.4,.5,1);--ease:cubic-bezier(.25,.8,.25,1);
+    --serif:"Fraunces",Georgia,serif;--sans:"Nunito",-apple-system,system-ui,sans-serif}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);background-image:radial-gradient(130% 55% at 50% -5%,var(--bg2) 0%,transparent 70%);min-height:100vh;
+    padding:calc(env(safe-area-inset-top) + 18px) 18px calc(env(safe-area-inset-bottom) + 30px);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:520px;margin:0 auto}
+  h1{font-family:var(--serif);font-variation-settings:"SOFT" 100,"opsz" 96;font-weight:650;font-size:34px;letter-spacing:-.8px;margin:6px 0 2px}
+  h2{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:600;font-size:19px;margin:0 0 12px}
+  .lead{color:var(--muted);font-weight:600;margin:0 0 6px;line-height:1.5}
+  .card{background:var(--card);border-radius:26px;padding:18px;margin:14px 0;box-shadow:var(--shadow);animation:rise .6s var(--ease) both}
+  .card:nth-of-type(2){animation-delay:.06s}.card:nth-of-type(3){animation-delay:.12s}.card:nth-of-type(4){animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}}
+  button{font:inherit;cursor:pointer;border:0;-webkit-appearance:none}
+  .btn{border-radius:16px;padding:13px 18px;font-weight:800;font-size:15px;background:var(--accent);color:#fff;transition:transform .35s var(--spring),opacity .3s}
+  .btn:active{transform:scale(.95)} .btn:disabled{opacity:.45}
+  .btn.ghost{background:var(--soft);color:var(--ink)} .btn.wide{width:100%}
+  input,textarea{font:inherit;font-size:16px;font-weight:600;width:100%;border:0;border-radius:16px;background:var(--soft);color:var(--ink);padding:13px 14px;outline:none}
+  textarea{min-height:120px;resize:vertical;font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.5;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+  .stats div{background:var(--soft);border-radius:18px;padding:12px 4px}
+  .stats b{display:block;font-family:var(--serif);font-size:24px;font-weight:600}
+  .stats small{color:var(--muted);font-weight:700;font-size:12px}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-weight:700}
+  .row:last-child{border:0} .row span{color:var(--muted);font-weight:700;text-align:right}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+  .chips button{background:var(--soft);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--ink)}
+  .msg{background:var(--paper);border-radius:18px;padding:13px 15px;margin:8px 0;box-shadow:inset 0 0 0 1px var(--line);display:flex;gap:10px;align-items:flex-start}
+  .msg p{margin:0;flex:1;font-family:var(--serif);font-weight:700;font-size:16.5px;line-height:1.45;white-space:pre-wrap}
+  .msg small{display:block;color:var(--muted);font-family:var(--sans);font-weight:700;font-size:11.5px;margin-top:5px}
+  .msg button{background:none;color:var(--muted);font-size:20px;line-height:1;padding:2px 4px}
+  .dev{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)} .dev:last-child{border:0}
+  .dev .dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+  .dev div{flex:1;font-weight:700;font-size:14px} .dev small{display:block;color:var(--muted);font-weight:600}
+  .count{text-align:right;color:var(--muted);font-weight:700;font-size:12.5px;margin-top:6px}
+  #toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top) + 18px);transform:translate(-50%,-20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:800;font-size:14px;opacity:0;transition:opacity .3s,transform .5s var(--spring);pointer-events:none;z-index:9;white-space:nowrap}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  .muted{color:var(--muted);font-weight:600;font-size:13.5px;line-height:1.5}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fanus · Emre</h1>
+  <p class="lead">Ona fanustan haber gönder. Mesajın telefonuna bildirim olarak düşer, fanusta altın bir kabarcık olarak belirir.</p>
+
+  <div class="card hidden" id="login">
+    <h2>Giriş</h2>
+    <p class="muted">Sana verdiğim anahtarı yaz. Bu telefonda hatırlanır.</p>
+    <input id="secret" type="password" autocomplete="off" placeholder="Anahtar">
+    <button class="btn wide" id="loginBtn" style="margin-top:10px">Giriş yap</button>
+  </div>
+
+  <div id="main" class="hidden">
+    <div class="card" id="fishCard"></div>
+    <div class="card">
+      <h2>Mesaj gönder</h2>
+      <textarea id="text" maxlength="300" placeholder="Bugün aklımdasın…"></textarea>
+      <div class="count"><span id="cnt">0</span>/300</div>
+      <div class="chips" id="chips"></div>
+      <button class="btn wide" id="send">Kabarcığa koy ve gönder</button>
+    </div>
+    <div class="card"><h2>Gönderilenler</h2><div id="msgs"></div></div>
+    <div class="card"><h2>Telefonlar</h2><p class="muted" style="margin-top:-6px">Mesajları sadece onaylı telefonlar alır. İlk kurulan telefon otomatik onaylanır.</p><div id="devs"></div></div>
+    <button class="btn ghost wide" id="logout">Çıkış</button>
+  </div>
+</div>
+<div id="toast"></div>
+<script src="config.js"></script>
+<script>
+(() => {
+  const $ = s => document.querySelector(s), CFG = window.FANUS_CONFIG || {}, KEY = 'fanus-emre-secret';
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const AY = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+  const when = iso => { if (!iso) return '—'; const d = new Date(iso); return `${d.getDate()} ${AY[d.getMonth()]} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`; };
+  const ago = t => { if (!t) return 'henüz yok'; const m = Math.floor((Date.now() - t) / 6e4); if (m < 1) return 'az önce'; if (m < 60) return m + ' dk önce'; const h = Math.floor(m / 60); if (h < 24) return h + ' saat önce'; return Math.floor(h / 24) + ' gün önce'; };
+  let tt; const toast = m => { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('show'), 2400); };
+  let secret = ''; try { secret = localStorage.getItem(KEY) || ''; } catch (e) { }
+  async function api(action, body = {}) {
+    const r = await fetch(CFG.fn, { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: CFG.key || '' }, body: JSON.stringify(Object.assign({ action, secret }, body)) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || 'Sunucu hatası (' + r.status + ')');
+    return j;
+  }
+  const IDEAS = ['Günaydın güzelim ☀️', 'Bugün çok özledim 💙', 'Balığımız nasıl? 🐟', 'Seni düşünüyorum 💭', 'İyi geceler, tatlı rüyalar 🌙', 'Gurur duyuyorum seninle ✨'];
+  $('#chips').innerHTML = IDEAS.map(i => `<button>${esc(i)}</button>`).join('');
+  $('#chips').onclick = e => { if (e.target.tagName === 'BUTTON') { $('#text').value = e.target.textContent; $('#cnt').textContent = $('#text').value.length; } };
+  $('#text').oninput = () => { $('#cnt').textContent = $('#text').value.length; };
+
+  async function load() {
+    try {
+      const j = await api('admin_status');
+      $('#login').classList.add('hidden'); $('#main').classList.remove('hidden');
+      const d = (j.devices || []).find(x => x.approved) || (j.devices || [])[0];
+      const s = d ? d.state || {} : {};
+      const today = new Date(Date.now() + 3 * 3600e3).toISOString().slice(0, 10);
+      const feeds = s.feedDay === today ? s.feedsToday : 0;
+      $('#fishCard').innerHTML = d ? `<h2>${esc(s.name || 'Balık')} · ${s.day || 1}. gün</h2>
+        <div class="stats"><div><b>${feeds}/2</b><small>bugün öğün</small></div><div><b>${s.streak || 0}</b><small>gün seri</small></div><div><b>${s.mood || '—'}</b><small>bugünkü hâli</small></div></div>
+        <div style="margin-top:10px">
+          <div class="row">Son yem <span>${ago(s.lastFeed)}</span></div>
+          <div class="row">Su değişimi günü <span>${esc(s.waterDue || '—')}</span></div>
+          <div class="row">Bugünün kabarcığı <span>${s.bubbleDay === today ? 'patlatıldı' : 'bekliyor'}</span></div>
+          <div class="row">Bildirimler <span>${d.notif ? 'açık' : 'kapalı'}</span></div>
+          <div class="row">Son görülme <span>${when(d.updated_at)}</span></div>
+        </div>` : `<h2>Henüz telefon yok</h2><p class="muted">Uygulama onun telefonunda ilk açıldığında burada görünecek.</p>`;
+      $('#msgs').innerHTML = (j.messages || []).length ? j.messages.map(m => `<div class="msg"><p>${esc(m.text)}<small>${when(m.created_at)}</small></p><button data-del="${m.id}" aria-label="Sil">×</button></div>`).join('') : '<p class="muted">Henüz mesaj yok.</p>';
+      $('#devs').innerHTML = (j.devices || []).map(x => `<div class="dev"><span class="dot" style="background:${x.state && x.state.body || '#ccc'}"></span>
+        <div>${esc(x.state && x.state.name || 'İsimsiz')}<small>${x.approved ? 'Onaylı' : 'Onay bekliyor'} · ${when(x.updated_at)}</small></div>
+        <button class="btn ghost" style="padding:8px 12px" data-dev="${x.id}" data-ap="${x.approved ? 0 : 1}">${x.approved ? 'Kaldır' : 'Onayla'}</button></div>`).join('') || '<p class="muted">Henüz telefon yok.</p>';
+    } catch (e) {
+      if (/Anahtar/.test(e.message)) { try { localStorage.removeItem(KEY); } catch (er) { } secret = ''; $('#main').classList.add('hidden'); $('#login').classList.remove('hidden'); if ($('#secret').value) toast('Anahtar yanlış'); }
+      else { toast(e.message); $('#login').classList.toggle('hidden', !!secret); }
+    }
+  }
+  $('#loginBtn').onclick = () => { secret = $('#secret').value.trim(); try { localStorage.setItem(KEY, secret); } catch (e) { } load(); };
+  $('#secret').onkeydown = e => { if (e.key === 'Enter') $('#loginBtn').click(); };
+  $('#logout').onclick = () => { try { localStorage.removeItem(KEY); } catch (e) { } location.reload(); };
+  $('#send').onclick = async () => {
+    const text = $('#text').value.trim(); if (!text) { toast('Önce bir şey yaz'); return; }
+    const b = $('#send'); b.disabled = true; b.textContent = 'Gönderiliyor…';
+    try { const j = await api('admin_send', { text }); $('#text').value = ''; $('#cnt').textContent = 0; toast(j.pushed ? 'Gönderildi, telefonuna düştü 💛' : 'Kaydedildi, uygulamayı açınca görecek 💛'); load(); }
+    catch (e) { toast(e.message); }
+    b.disabled = false; b.textContent = 'Kabarcığa koy ve gönder';
+  };
+  document.addEventListener('click', async e => {
+    const del = e.target.closest('[data-del]'), dev = e.target.closest('[data-dev]');
+    if (del && confirm('Bu mesaj silinsin mi? (Telefonuna ulaştıysa orada kalır)')) { await api('admin_delete', { id: del.dataset.del }).catch(er => toast(er.message)); load(); }
+    if (dev) {
+      const ap = dev.dataset.ap === '1';
+      if (!ap && !confirm('Bu telefonun onayı kaldırılsın mı? Mesajları artık almaz.')) return;
+      await api('admin_device', { id: dev.dataset.dev, approved: ap }).catch(er => toast(er.message)); load();
+    }
+  });
+  if (secret) load(); else $('#login').classList.remove('hidden');
+})();
+</script>
+</body>
+</html>
