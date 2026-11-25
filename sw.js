@@ -1,5 +1,5 @@
 // Fanusum service worker — çevrimdışı çalışma + bildirimler
-const V = 'fanusum-v3';
+const V = 'fanusum-v4';
 const FILES = ['./', 'index.html', 'style.css', 'config.js', 'notes.js', 'fish.js', 'sound.js', 'app.js', 'manifest.json',
   'icons/icon-180.png', 'icons/icon-192.png', 'icons/icon-512.png'];
 const FONT_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com'];

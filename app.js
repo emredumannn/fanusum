@@ -230,7 +230,7 @@ function resize() {
   cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
   cv.style.width = W + 'px'; cv.style.height = H + 'px';
   const R = Math.min(W * 0.47, H * 0.44);
-  const cx = W / 2, cy = Math.max(H * 0.54, H - R * 1.1);
+  const cx = W / 2, cy = Math.min(H * 0.53, H - R * 1.05);
   G = { cx, cy, R, waterTop: cy - R * 0.6, rimY: cy - R * 0.8, fs: R * 0.66 };
   G.gravel = x => cy + R * 0.56 + Math.pow((x - cx) / R, 2) * R * 0.1;
   buildGravel();
